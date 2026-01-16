@@ -1,6 +1,6 @@
 Package: GeoTox
 Title: Spatiotemporal Mixture Risk Assessment
-Version: 0.2.0
+Version: 0.3.0
 Authors@R: c(
     person("Skylar", "Marvel", , "skylar.marvel@nih.gov", role = c("aut"),
            comment = c(ORCID = "0000-0002-2971-9743")),
@@ -12,28 +12,30 @@ Authors@R: c(
   )
 Description: Connecting spatiotemporal exposure to individual and
     population-level risk via source-to-outcome continuum modeling. The package,
-    methods, and case-studies are described in Messier, Reif, and Marvel (2024)
-    <doi:10.1101/2024.09.23.24314096> and Eccles et al. (2023)
+    methods, and case-studies are described in Messier, Reif, and Marvel (2025)
+    <doi:10.1186/s40246-024-00711-8> and Eccles et al. (2023)
     <doi:10.1016/j.scitotenv.2022.158905>.
 License: MIT + file LICENSE
 URL: https://niehs.github.io/GeoTox/, https://github.com/NIEHS/GeoTox
 Depends: R (>= 4.4.0)
-Imports: dplyr, ggplot2, ggridges, rlang, sf, stats, stringr, tibble,
-        tidyr, tidyselect, truncnorm, utils
-Suggests: ggpubr, httk, httr2, knitr, purrr, readr, readxl, rmarkdown,
-        scales, testthat (>= 3.0.0)
+Imports: dplyr, ggplot2, ggridges, purrr, rlang, sf, stats, stringr,
+        tibble, tidyr, tidyselect, truncnorm, utils
+Suggests: ggpubr, httk, httr2, knitr, readr, readxl, rmarkdown, scales,
+        testthat (>= 3.0.0)
 VignetteBuilder: knitr
 Config/testthat/edition: 3
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 BugReports: https://github.com/NIEHS/GeoTox/issues
+Config/Needs/website: rmarkdown
 NeedsCompilation: no
-Packaged: 2024-11-14 17:29:09 UTC; marvelsw
-Author: Skylar Marvel [aut] (<https://orcid.org/0000-0002-2971-9743>),
-  David Reif [aut] (<https://orcid.org/0000-0001-7815-6767>),
-  Kyle Messier [cre, aut] (<https://orcid.org/0000-0001-9508-9623>),
+Packaged: 2026-01-16 17:35:30 UTC; marvelsw
+Author: Skylar Marvel [aut] (ORCID: <https://orcid.org/0000-0002-2971-9743>),
+  David Reif [aut] (ORCID: <https://orcid.org/0000-0001-7815-6767>),
+  Kyle Messier [cre, aut] (ORCID:
+    <https://orcid.org/0000-0001-9508-9623>),
   Spatiotemporal Exposures and Toxicology Group [cph]
 Maintainer: Kyle Messier <kyle.messier@nih.gov>
 Repository: CRAN
-Date/Publication: 2024-11-15 14:20:02 UTC
+Date/Publication: 2026-01-16 17:50:12 UTC

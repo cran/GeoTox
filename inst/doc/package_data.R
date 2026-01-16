@@ -57,15 +57,8 @@ geo_tox_data <- list()
 # 
 # exposure_casrn <- read_csv("CCD-Batch-Search.csv",
 #                            show_col_types = FALSE) |>
-#   filter(DTXSID != "N/A") |>
-#   # Prioritize results based on FOUND_BY status
-#   arrange(INPUT,
-#           grepl("Approved Name", FOUND_BY),
-#           grepl("^Synonym", FOUND_BY)) |>
-#   # Keep one result per INPUT
-#   group_by(INPUT) |>
-#   slice(1) |>
-#   ungroup()
+#   filter(DTXSID != "N/A",
+#          !grepl("WARNING", FOUND_BY))
 # 
 # # Update exposure data with CompTox Dashboard data
 # geo_tox_data$exposure <- geo_tox_data$exposure |>
@@ -115,16 +108,13 @@ geo_tox_data <- list()
 #     distinct()
 # }
 # 
-# assays <- c("APR_HepG2_p53Act_1h_dn",
-#             "APR_HepG2_p53Act_1h_up",
-#             "APR_HepG2_p53Act_24h_dn",
-#             "APR_HepG2_p53Act_24h_up",
-#             "APR_HepG2_p53Act_72h_dn",
-#             "APR_HepG2_p53Act_72h_up",
-#             "ATG_p53_CIS_up",
-#             "TOX21_DT40",
-#             "TOX21_DT40_100",
-#             "TOX21_DT40_657",
+# assays <- c("APR_HepG2_p53Act_1hr",
+#             "APR_HepG2_p53Act_24hr",
+#             "APR_HepG2_p53Act_72hr",
+#             "ATG_p53_CIS",
+#             "TOX21_DT40_LUC",
+#             "TOX21_DT40_100_LUC",
+#             "TOX21_DT40_657_LUC",
 #             "TOX21_ELG1_LUC_Agonist",
 #             "TOX21_H2AX_HTRF_CHO_Agonist_ratio",
 #             "TOX21_p53_BLA_p1_ratio",
@@ -202,7 +192,7 @@ geo_tox_data <- list()
 ## ----eval=FALSE---------------------------------------------------------------
 # # Data for North Carolina
 # url <- paste0("https://www2.census.gov/programs-surveys/popest/datasets/",
-#               "2010-2019/counties/asrh/cc-est2019-alldata-37.csv")
+#               "2010-2020/counties/asrh/CC-EST2020-ALLDATA-37.csv")
 # age <- read_csv(url, show_col_types = FALSE)
 # 
 # geo_tox_data$age <- age |>
@@ -214,7 +204,7 @@ geo_tox_data <- list()
 #   select(FIPS, AGEGRP, TOT_POP)
 
 ## ----eval=FALSE---------------------------------------------------------------
-# places <- read_csv("PLACES__County_Data__GIS_Friendly_Format___2020_release.csv",
+# places <- read_csv("PLACES__County_Data_(GIS_Friendly_Format),_2020_release.csv",
 #                    show_col_types = FALSE)
 # 
 # # Convert confidence interval to standard deviation
